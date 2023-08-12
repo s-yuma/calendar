@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0; 
+ }
+
+.marquee {
+  
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+.news-item {
+  
+  margin-right: 10px; /* アイテムの間隔を設定 */
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+body {
+  background-color: #1a6b69;
+  margin: 0 auto;
+  display: grid;
+  min-height: 100vh;
+  grid-template:
+  "header header" 60px
+  "left center" 2fr
+  "footer footer" 50px
+  / auto 1fr;
+    gap: 10px;
+}
+
+.scroll {
+  margin: auto;
+  width: 100%;
+  color: black;
+  overflow:hidden;
+}
+.news {
+  font-size: 14px;
+  display: inline-block;
+  padding-left: 100%;
+  white-space: nowrap;
+  line-height: 1em;
+  animation: scrollAnime 400s linear infinite;
+}
+
+.news div {display: inline-block; margin-right: 10px;}
+
+@keyframes scrollAnime{
+    0% {transform: translateX(0)}
+  100% {transform: translateX(-100%)}
+}
+
+@media screen and (max-width: 375px) { /* スマートフォンサイズ以下の場合 */
+  .scroll {
+    color: black;
+    overflow:hidden;
+  }
+  .news {
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1em;
+    animation: scrollAnime 500s linear infinite;
+    margin-bottom: 2px;
+  }
+  
+  @keyframes scrollAnime{
+      0% {transform: translateX(0)}
+    100% {transform: translateX(-100%)}
+  }
+
+  footer {
+    background-color: blueviolet;
+    grid-area: footer;
+    overflow:hidden;
+    margin-left: 5px;
+    margin-right: 5px;
+  } 
+}
+
+
+
+
+
+header {
+  grid-area: header;
+}
+
+main {
+  background-color: chartreuse;
+  grid-area: center;
+}
+
+nav {
+  grid-area: left;
+}
+
+footer {
+  grid-area: footer;
+} 
+
+@media screen and  (max-width: 1000px) {
+  body {
+      grid-template: 
+          "header" 120px
+          "left" 40px
+          "center"1fr
+          "footer" 30px
+          ;
+      
+  }
+}
+
