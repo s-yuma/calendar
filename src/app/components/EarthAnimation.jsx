@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { Canvas, useLoader, useFrame } from 'react-three-fiber';
+import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader, AdditiveBlending } from 'three';
 
 const EarthAnimation = () => {
